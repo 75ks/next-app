@@ -2,7 +2,7 @@
 
 import User from "@/pages/types/user";
 import { useEffect, useState } from "react";
-import Loading from "./loading";
+import Loading from "../components/layouts/loading";
 
 export default function Users() {
   const [users, setUsers] = useState<User[]>([]);
