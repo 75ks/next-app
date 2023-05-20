@@ -3,17 +3,15 @@
 import User from "@/pages/types/user";
 import { useEffect, useState } from "react";
 
-
 export default function Users() {
   const [users, setUsers] = useState<User[]>([]);
 
-  const getData = async () => {
-    const res = await fetch("http://localhost:3000/api/users");
-    const data = await res.json();
-    setUsers(data);
-  }
-
   useEffect(() => {
+    const getData = async () => {
+      const res = await fetch("http://localhost:3000/api/users");
+      const data = await res.json();
+      setUsers(data);
+    }
     getData();
     return () => {
     }
