@@ -26,7 +26,9 @@ export default function Users() {
         <p>■ ユーザーリスト</p>
       </div>
       {loading ? (
-        <Loading />
+        <Loading
+          text="データ取得中です。しばらくお待ちください。"
+        />
       ) : (
         users.map((user, index) => (
           <ul key={index} className="text-center p-2 border-t">
