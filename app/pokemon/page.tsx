@@ -5,15 +5,15 @@ import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 
 export default function Pokemon() {
-  const [searchParams, setSearchParams] = useSearchParams();
+  const searchParams = useSearchParams();
   const [pokemon, setPokemon] = useState<any>();
 
   const getPokemon = async () => {
     //  ポケモンNo1~1008までのランダムな数値を作成
     let randnum: number = Math.floor(Math.random() * 1009);
     // クエリパラメータが存在する かつ クエリパラメータが空ではない場合
-    if (searchParams && searchParams[1] !== "") {
-      randnum = Number(searchParams[1]);
+    if (searchParams && searchParams.get("id") !== "") {
+      randnum = Number(searchParams.get("id"));
       // クエリパラメータが数字ではない場合
       if (isNaN(randnum)) {
         alert("パラメータには数字を入力してください");
