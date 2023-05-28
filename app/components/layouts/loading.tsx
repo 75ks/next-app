@@ -5,7 +5,7 @@ export default function Loading(props: any) {
     <div>
       <ReactLoading
         type="spin"
-        color="#ebc634"
+        color="#A7F3D0"
         height="50px"
         width="50px"
         className="mx-auto"
