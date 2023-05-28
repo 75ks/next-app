@@ -22,9 +22,7 @@ export default function Users() {
 
   return (
     <div className="p-4">
-      <div className="text-center mb-4">
-        <p>■ ユーザーリスト</p>
-      </div>
+      <p className="text-center mb-4">■ ユーザーリスト</p>
       {loading ? (
         <Loading
           text="データ取得中です。しばらくお待ちください。"
