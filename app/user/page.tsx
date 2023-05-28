@@ -3,6 +3,7 @@
 import User from "@/pages/types/user";
 import { useEffect, useState } from "react";
 import Loading from "../components/layouts/loading";
+import Link from "next/link";
 
 export default function Users() {
   const [users, setUsers] = useState<User[]>([]);
@@ -29,11 +30,13 @@ export default function Users() {
         />
       ) : (
         users.map((user, index) => (
-          <ul key={index} className="text-center p-2 border-t">
-            <li>ID：{user.id}</li>
-            <li>名前：{user.name}</li>
-            <li>年齢：{user.age}</li>
-          </ul>
+          <Link href={`/user/${user.id}`} key={index} className="hover:text-neutral-500">
+            <ul className="text-center p-2 border-t">
+              <li>ID：{user.id}</li>
+              <li>名前：{user.name}</li>
+              <li>年齢：{user.age}</li>
+            </ul>
+          </Link>
         ))
       )}
     </div>
