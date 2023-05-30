@@ -1,6 +1,10 @@
 import ReactLoading from "react-loading";
 
-export default function Loading(props: any) {
+type Props = {
+  text: string
+}
+
+export default function Loading(props: Props) {
   return (
     <div>
       <ReactLoading
