@@ -10,7 +10,7 @@ type Props = {
   }
 }
 
-export default function Users({ params: { id } }: Props) {
+const User: React.FC<Props> = ({ params: { id } }: Props) => {
   const [users, setUsers] = useState<User[]>([]);
   const [loading, setLoading] = useState(true);
 
@@ -52,3 +52,5 @@ export default function Users({ params: { id } }: Props) {
     </div>
   );
 }
+
+export default User;

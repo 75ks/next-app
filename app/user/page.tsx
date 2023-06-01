@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import Loading from "../components/layouts/loading";
 import Link from "next/link";
 
-export default function Users() {
+const Users: React.FC = () => {
   const [users, setUsers] = useState<User[]>([]);
   const [loading, setLoading] = useState(true);
 
@@ -42,3 +42,5 @@ export default function Users() {
     </div>
   );
 }
+
+export default Users;

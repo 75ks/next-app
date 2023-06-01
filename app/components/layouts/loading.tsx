@@ -4,7 +4,7 @@ type Props = {
   text: string
 }
 
-export default function Loading(props: Props) {
+const Loading: React.FC<Props> = (props) => {
   return (
     <div>
       <ReactLoading
@@ -19,3 +19,5 @@ export default function Loading(props: Props) {
   );
   
 }
+
+export default Loading;

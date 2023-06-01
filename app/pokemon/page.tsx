@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 
-export default function Pokemon() {
+const Pokemon: React.FC = () => {
   const searchParams = useSearchParams();
   const [pokemon, setPokemon] = useState<any>();
 
@@ -59,3 +59,5 @@ export default function Pokemon() {
     </div>
   )
 }
+
+export default Pokemon;
