@@ -10,9 +10,10 @@ type Props = {
   }
 }
 
-const User: React.FC<Props> = ({ params: { id } }: Props) => {
+const User: React.FC<Props> = (props) => {
   const [users, setUsers] = useState<User[]>([]);
   const [loading, setLoading] = useState(true);
+  const [index, setIndex] = useState<number>(props.params.id - 1);
 
   useEffect(() => {
     const getData = async () => {
@@ -34,17 +35,17 @@ const User: React.FC<Props> = ({ params: { id } }: Props) => {
           text="データ取得中です。しばらくお待ちください。"
         />
       ) : (
-        users[id - 1]
+        users[index]
       ) ? (
         <ul className="text-center p-2 border-t">
-          <li>ID：{users[id - 1].id}</li>
-          <li>名前：{users[id - 1].name}</li>
-          <li>年齢：{users[id - 1].age}</li>
-          <li>電話番号：{users[id - 1].phoneNumber}</li>
-          <li>郵便番号：{users[id - 1].postCode}</li>
-          <li>住所1：{users[id - 1].address1}</li>
-          <li>住所2：{users[id - 1].address2}</li>
-          <li>住所3：{users[id - 1].address3}</li>
+          <li>ID：{users[index].id}</li>
+          <li>名前：{users[index].name}</li>
+          <li>年齢：{users[index].age}</li>
+          <li>電話番号：{users[index].phoneNumber}</li>
+          <li>郵便番号：{users[index].postCode}</li>
+          <li>住所1：{users[index].address1}</li>
+          <li>住所2：{users[index].address2}</li>
+          <li>住所3：{users[index].address3}</li>
         </ul>
       ) : (
         <p className="text-center p-2 border-t">ユーザーが存在しません。</p>
