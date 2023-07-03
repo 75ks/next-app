@@ -2,7 +2,7 @@
 
 import User from "@/pages/types/user";
 import { useEffect, useState } from "react";
-import Loading from "../components/layouts/loading";
+import Loading from "../../components/layouts/loading";
 import Link from "next/link";
 
 const Users: React.FC = () => {
